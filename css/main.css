@@ -1108,6 +1108,7 @@ pre code {
   border: 1px solid #eee;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
 }
 .site-author-name {
   color: var(--text-color);
@@ -1845,6 +1846,24 @@ pre code {
 .post-block:last-of-type .post-eof {
   display: none;
 }
+.post-copyright ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0.5em 1em;
+  position: relative;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  margin: 1em 0 0;
+}
+.post-copyright ul::after {
+  content: '\f25e';
+  font-family: 'Font Awesome 6 Brands';
+  font-size: 200px;
+  opacity: 0.1;
+  position: absolute;
+  right: -50px;
+  top: -150px;
+}
 .post-tags {
   margin-top: 40px;
   text-align: center;
@@ -2104,7 +2123,7 @@ ul.breadcrumb li:last-child {
 }
 .header {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: initial;
 }
 @media (max-width: 991px) {
@@ -2141,7 +2160,7 @@ ul.breadcrumb li:last-child {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -2279,7 +2298,7 @@ ul.breadcrumb li:last-child {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
@@ -2351,4 +2370,29 @@ ul.breadcrumb li:last-child {
   .pagination {
     margin-bottom: 10px;
   }
+}
+body {
+  background: url("/images/back_pt.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.header-inner {
+  background: url("/images/bk_2.png");
+}
+.content-wrap {
+  opacity: 0.5;
+}
+​,
+.sidebar {
+  background-color: transparent;
+  opacity: 0.9;
+}
+​,
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.main-inner {
+  opacity: 0.8;
 }
