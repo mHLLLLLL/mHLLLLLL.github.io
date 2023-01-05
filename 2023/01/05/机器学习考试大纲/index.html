@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.mh-li.life","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="机器学习考试大纲 第一章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习考试大纲">
+<meta property="og:url" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/index.html">
+<meta property="og:site_name" content="MH-Li &#39;s blog">
+<meta property="og:description" content="机器学习考试大纲 第一章">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221222144531692.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223005510542.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223203916362.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095653520.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095802310.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111255032.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111321966.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111400573.png">
+<meta property="og:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103112146824.png">
+<meta property="article:published_time" content="2023-01-05T13:10:10.000Z">
+<meta property="article:modified_time" content="2023-01-05T13:15:34.966Z">
+<meta property="article:author" content="MH-Li">
+<meta property="article:tag" content="大二上复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221222144531692.png">
+
+
+<link rel="canonical" href="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/","path":"2023/01/05/机器学习考试大纲/","title":"机器学习考试大纲"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>机器学习考试大纲 | MH-Li 's blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">MH-Li 's blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道阻且长 行则将至</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">机器学习考试大纲</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="nav-number">1.1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%AF%BC%E5%90%91%E6%A1%86%E6%9E%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">问题导向框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">机器学习算法类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%B5%85%E5%B1%82%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.1.3.</span> <span class="nav-text">深度学习和浅层学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E4%BA%94%E5%85%83%E7%BB%84"><span class="nav-number">1.1.4.</span> <span class="nav-text">马尔可夫决策五元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.1.5.</span> <span class="nav-text">统计学习三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8"><span class="nav-number">1.1.6.</span> <span class="nav-text">常见机器学习应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.2.</span> <span class="nav-text">第二章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%92%8C%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E5%BA%93%EF%BC%88%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">科学计算和数据处理的库（简单了解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95%EF%BC%88%E9%87%8D%E7%82%B9%E5%A4%8D%E4%B9%A0%E5%86%85%E5%AE%B9%EF%BC%89"><span class="nav-number">1.2.2.</span> <span class="nav-text">常见库的导入方法（重点复习内容）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">第三章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.1.</span> <span class="nav-text">无监督学习和有监督学习的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E8%BE%93%E5%85%A5%E7%89%B9%E5%BE%81%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">无监督学习和有监督学习的输入特征的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%EF%BC%9A"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">拓展：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E9%87%8C%E7%9A%84%E5%9D%87%E5%80%BC%E5%92%8C%E6%96%B9%E5%B7%AE%E5%85%AC%E5%BC%8F%E4%B8%8E%E5%90%AB%E4%B9%89"><span class="nav-number">1.3.3.</span> <span class="nav-text">描述性统计分析里的均值和方差公式与含义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%87%E5%80%BC"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">均值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%B7%AE"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">方差</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E9%87%8C%E7%9A%84%E5%81%8F%E5%BA%A6%E5%92%8C%E5%B3%B0%E5%BA%A6%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">1.3.4.</span> <span class="nav-text">描述性统计分析里的偏度和峰度的含义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%8F%E5%BA%A6"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">偏度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B3%B0%E5%BA%A6"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">峰度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.5.</span> <span class="nav-text">协方差矩阵的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.6.</span> <span class="nav-text">相关系数矩阵的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E7%9A%84%E5%81%8F%E5%BA%A6%E5%8F%96%E5%80%BC%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.7.</span> <span class="nav-text">不同分布的偏度取值区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E7%9A%84%E5%B3%B0%E5%BA%A6%E5%8F%96%E5%80%BC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.8.</span> <span class="nav-text">不同分布的峰度取值的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E4%BD%8D%E6%95%B0%E3%80%81%E5%88%86%E4%BD%8D%E6%95%B0%E3%80%81%E4%BC%97%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">1.3.9.</span> <span class="nav-text">中位数、分位数、众数的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%B1%E5%9E%8B%E5%9B%BE%E5%92%8C%E7%9B%B4%E6%96%B9%E5%9B%BE%E7%BB%98%E5%88%B6%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.10.</span> <span class="nav-text">箱型图和直方图绘制与性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%B1%E5%9E%8B%E5%9B%BE"><span class="nav-number">1.3.10.1.</span> <span class="nav-text">箱型图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-number">1.3.10.2.</span> <span class="nav-text">直方图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.11.</span> <span class="nav-text">核密度估计的定义与性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%B1%E5%93%8D%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E7%9A%84%E9%87%8D%E8%A6%81%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.12.</span> <span class="nav-text">影响核密度估计的重要参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.13.</span> <span class="nav-text">聚类算法的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K%E5%9D%87%E5%80%BC%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.14.</span> <span class="nav-text">K均值算法的两个目标函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K%E5%9D%87%E5%80%BC%E7%AE%97%E6%B3%95%E7%9A%84%E8%BF%AD%E4%BB%A3%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.3.15.</span> <span class="nav-text">K均值算法的迭代步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K%E5%9D%87%E5%80%BC%E7%AE%97%E6%B3%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.3.16.</span> <span class="nav-text">K均值算法的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.17.</span> <span class="nav-text">主成分分析的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%88%86%E6%9E%90%E8%A7%92%E5%BA%A6"><span class="nav-number">1.3.18.</span> <span class="nav-text">主成分分析的两个分析角度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E6%96%B9%E5%90%91%E4%B8%8E%E4%B8%BB%E6%88%90%E5%88%86%E6%96%B9%E5%90%91%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-number">1.3.19.</span> <span class="nav-text">投影方向与主成分方向的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3%E5%92%8C%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.20.</span> <span class="nav-text">特征分解和奇异值分解的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.21.</span> <span class="nav-text">混合模型的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%AF%86%E5%BA%A6%E4%BC%B0%E8%AE%A1%E5%92%8C%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-number">1.3.22.</span> <span class="nav-text">核密度估计和混合模型的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.23.</span> <span class="nav-text">隐马尔可夫模型的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%A7%E8%B4%A8%EF%BC%88%E5%85%AC%E5%BC%8F-3-5-4-%E3%80%81-3-5-5-%EF%BC%89"><span class="nav-number">1.3.24.</span> <span class="nav-text">隐马尔可夫模型的性质（公式 $3.5.4 $ 、$3.5.5$）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.3.25.</span> <span class="nav-text">隐马尔可夫模型的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E5%89%8D%E6%A6%82%E7%8E%87%E5%92%8C%E5%90%91%E5%90%8E%E6%A6%82%E7%8E%87%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.26.</span> <span class="nav-text">向前概率和向后概率的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%91%E5%89%8D%E6%A6%82%E7%8E%87%E6%B3%95%E8%AE%A1%E7%AE%97"><span class="nav-number">1.3.27.</span> <span class="nav-text">隐马尔可夫模型的向前概率法计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E4%B8%8B%E6%BA%A2%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.3.28.</span> <span class="nav-text">计算下溢的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="nav-number">1.4.</span> <span class="nav-text">第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%AD%E9%9A%8F%E6%9C%BA%E8%AF%AF%E5%B7%AE%E9%A1%B9%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">回归分析中随机误差项的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">最小二乘估计的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-2-%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="nav-number">1.4.3.</span> <span class="nav-text">$R^2$ 的作用、计算公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-2-%E4%B8%8D%E5%90%8C%E5%8F%96%E5%80%BC%E4%BB%A3%E8%A1%A8%E7%9A%84%E5%90%AB%E4%B9%89"><span class="nav-number">1.4.4.</span> <span class="nav-text">$R^2$ 不同取值代表的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.4.5.</span> <span class="nav-text">回归分析流程的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E9%80%89%E6%8B%A9%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.6.</span> <span class="nav-text">变量选择的原因及方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95%E5%92%8C%E7%9B%AE%E7%9A%84"><span class="nav-number">1.4.7.</span> <span class="nav-text">正则化方法和目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L1%E6%AD%A3%E5%88%99%E5%8C%96%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.8.</span> <span class="nav-text">L1正则化性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L1%E5%92%8CL2%E6%AD%A3%E5%88%99%E5%8C%96%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%BD%A2%E5%BC%8F%EF%BC%88%E5%85%AC%E5%BC%8F4-3-2-%E3%80%81-4-3-7%EF%BC%89"><span class="nav-number">1.4.9.</span> <span class="nav-text">L1和L2正则化的拉格朗日形式（公式4.3.2 、 4.3.7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%80%E7%96%8F%E6%80%A7%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.10.</span> <span class="nav-text">稀疏性的概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="nav-number">1.5.</span> <span class="nav-text">第五章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text">判别分析的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.2.</span> <span class="nav-text">贝叶斯判别分析的定义及主要方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E6%A6%82%E7%8E%87%E3%80%81%E5%90%8E%E9%AA%8C%E6%A6%82%E7%8E%87%E3%80%81%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%EF%BC%88%E5%85%AC%E5%BC%8F5-1-1%EF%BC%89"><span class="nav-number">1.5.3.</span> <span class="nav-text">先验概率、后验概率、密度函数（公式5.1.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90%E7%9A%84%E5%81%87%E8%AE%BE"><span class="nav-number">1.5.4.</span> <span class="nav-text">线性判别分析的假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F5-1-2-%E3%80%81-5-1-3%E6%8E%A8%E5%AF%BC"><span class="nav-number">1.5.5.</span> <span class="nav-text">公式5.1.2 、 5.1.3推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90%E7%9A%84%E5%81%87%E8%AE%BE"><span class="nav-number">1.5.6.</span> <span class="nav-text">二次判别分析的假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C%E6%80%A7%E8%B4%A8"><span class="nav-number">1.5.7.</span> <span class="nav-text">二次判别分析的决策边界性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%92%8C%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-number">1.5.8.</span> <span class="nav-text">逻辑回归和线性回归的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98%EF%BC%8C-y-0-%E5%92%8C-y-1-%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%9B%BE%E7%9A%84%E7%BB%98%E5%88%B6%E3%80%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.9.</span> <span class="nav-text">二分类问题，$y &#x3D; 0$和$y &#x3D; 1$的损失函数图的绘制、损失函数公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.5.10.</span> <span class="nav-text">梯度下降法的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="nav-number">1.5.11.</span> <span class="nav-text">SVM的定义与性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BA%A6%E9%87%8F%E4%B8%8E%E8%AE%A1%E7%AE%97"><span class="nav-number">1.5.12.</span> <span class="nav-text">混淆矩阵的常用度量与计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROC%E6%9B%B2%E7%BA%BF%E5%92%8CAUC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.5.13.</span> <span class="nav-text">ROC曲线和AUC的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%B9%B3%E8%A1%A1%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%A7%A3%E5%86%B3"><span class="nav-number">1.5.14.</span> <span class="nav-text">数据不平衡的定义与解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">1.6.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">1.6.1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EM%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.6.2.</span> <span class="nav-text">EM算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E5%92%8C%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-number">1.6.3.</span> <span class="nav-text">极大似然估计和置信区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-number">1.6.4.</span> <span class="nav-text">拟合问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.6.5.</span> <span class="nav-text">欠拟合的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.6.6.</span> <span class="nav-text">过拟合的原因</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MH-Li"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">MH-Li</p>
+  <div class="site-description" itemprop="description">滚蛋吧！内耗君！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mHLLLLLL" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mHLLLLLL" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="MH-Li">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MH-Li 's blog">
+      <meta itemprop="description" content="滚蛋吧！内耗君！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="机器学习考试大纲 | MH-Li 's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习考试大纲
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-05 21:10:10 / 修改时间：21:15:34" itemprop="dateCreated datePublished" datetime="2023-01-05T21:10:10+08:00">2023-01-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1>机器学习考试大纲</h1>
+<h2 id="第一章">第一章</h2>
+ <span id="more"></span> 
+<h3 id="问题导向框架">问题导向框架</h3>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221222144531692.png" class title="image-20221222144531692">
+<h3 id="机器学习算法类型">机器学习算法类型</h3>
+<p>机器学习按学习目标的不同分为无监督学习、有监督学习和强化学习</p>
+<p>无监督学习典型算法：聚类算法，混合模型，k均值算法，主成分分析</p>
+<p>有监督学习典型算法：线性回归，逻辑回归，线性判别，k近邻，支持向量机，决策树</p>
+<p>有监督学习分为两类问题：</p>
+<p>分类问题：逻辑回归，线性判别，k近邻，支持向量机</p>
+<p>回归问题：线性回归，Lasso回归（线性回归+L1正则化），岭回归（线性回归+L2正则化）</p>
+<h3 id="深度学习和浅层学习">深度学习和浅层学习</h3>
+<p>深度学习指的是在机器学习方法中引入多个层级的非线性处理单元，每层使用前一层的输出作为输入，实现特征提取和特征转换</p>
+<p>浅层学习与深度学习对应，其对原始数据进行了一层函数映射</p>
+<h3 id="马尔可夫决策五元组">马尔可夫决策五元组</h3>
+<p>马尔可夫决策是一个五元组(S，A，<em>P</em>，R， $\gamma\$）</p>
+<p>（1）S是状态集，s~t~ $\in$ S;</p>
+<p>（2）A是状态集，a~t~ $\in$ A;</p>
+<p>（3）<em>P</em> 是转移概率函数矩阵，$P^a_{ss’}$ = P(s~t+1~ = s’|s~t~ = s,a~t~ = a) 为三元函数，表示在状态s~t~ = s 执行动作 a~t~ = a后下一个状态为 s~t+1~ = s’ 的概率；</p>
+<p>（4）R是回报函数，$R^a_s$  = $E(r_{t+1}|s_t = s,a_t = a)$ ；</p>
+<p>（5）$\gamma \in [0,1]$ 是折现因子，代表未来下一时刻单位回报在当前的价值</p>
+<h3 id="统计学习三要素">统计学习三要素</h3>
+<p>统计学习三要素：模型、策略（目标函数）和算法</p>
+<h3 id="常见机器学习应用">常见机器学习应用</h3>
+<p>常见应用包括图像识别、语音识别、文本挖掘、游戏竞技</p>
+<h2 id="第二章">第二章</h2>
+<h3 id="科学计算和数据处理的库（简单了解）">科学计算和数据处理的库（简单了解）</h3>
+<p>NumPy、SciPy、Pandas</p>
+<h3 id="常见库的导入方法（重点复习内容）">常见库的导入方法（重点复习内容）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numpy.ones()  <span class="comment"># 生成全为1的数组</span></span><br><span class="line">numpy.zeros()  <span class="comment"># 生成全为0的数组</span></span><br></pre></td></tr></table></figure>
+<h2 id="第三章">第三章</h2>
+<h3 id="无监督学习和有监督学习的区别">无监督学习和有监督学习的区别</h3>
+<p>无监督学习主要研究没有标签的数据或不区分响应变量和解释变量的数据</p>
+<p>有监督学习主要研究有标签的数据或区分响应变量和解释变量的数据</p>
+<h3 id="无监督学习和有监督学习的输入特征的性质">无监督学习和有监督学习的输入特征的性质</h3>
+<p>无监督学习和有监督学习的输入特征可以是离散的，也可以是连续的</p>
+<h4 id="拓展：">拓展：</h4>
+<p>分类问题输入特征，可以是离散的，也可以是连续的，但输出特征是离散的</p>
+<p>回归问题输入特征，可以是离散的，也可以是连续的，但输出特征是连续的</p>
+<h3 id="描述性统计分析里的均值和方差公式与含义">描述性统计分析里的均值和方差公式与含义</h3>
+<p>假设${x_1,x_2,…,x_N}$ 是来自总体 $X$ 的一组一维观测样本</p>
+<h4 id="均值">均值</h4>
+<p>含义：反映的是数据样本的中心位置</p>
+<p>公式：$\hat\mu_x = \bar x = \frac{1}{N}\sum_{i=1}^{N}x_i$</p>
+<h4 id="方差">方差</h4>
+<p>含义：方差反应的是数据样本距离中心的平均离散程度</p>
+<p>公式：$\hat\sigma^2_x = \frac{1}{N-1}\sum_{i=1}^{N}(x_i-\hat\mu_x)^2$</p>
+<h3 id="描述性统计分析里的偏度和峰度的含义">描述性统计分析里的偏度和峰度的含义</h3>
+<h4 id="偏度">偏度</h4>
+<p>含义：偏度反映了数据分布偏离对称性的状况</p>
+<h4 id="峰度">峰度</h4>
+<p>含义：峰度反映了数据分布的中心附近的平坦程度</p>
+<h3 id="协方差矩阵的性质">协方差矩阵的性质</h3>
+<p>协方差矩阵一定是一个对称阵</p>
+<h3 id="相关系数矩阵的性质">相关系数矩阵的性质</h3>
+<p>对角线的值都为1</p>
+<h3 id="不同分布的偏度取值区别">不同分布的偏度取值区别</h3>
+<p>一般对称分布的偏度为0，如正态分布和Laplace分布；</p>
+<p>偏度<strong>大于</strong>0表示其数据分布形态与正态分布相比为<strong>正偏或右偏</strong>；</p>
+<p>偏度<strong>小于</strong>0表示其数据分布形态与正态分布相比为<strong>负数偏或左偏</strong></p>
+<h3 id="不同分布的峰度取值的区别">不同分布的峰度取值的区别</h3>
+<p>峰度的绝对值越大表示其分布形态与正态分布的陡缓程度的差异程度越大。</p>
+<p>峰度等于0，表示该分布与正太分布的中心的陡缓程度相同；</p>
+<p>峰度大于0，表示该分布与正太分布的中心的陡缓程度相比较为陡峭，为尖顶峰；</p>
+<p>峰度小于0，表示该分布与正太分布的中心的陡缓程度相比较为平坦，为平顶峰；</p>
+<p>正态分布的峰度为0，Laplace分布的峰度为0.3</p>
+<h3 id="中位数、分位数、众数的含义">中位数、分位数、众数的含义</h3>
+<p>中位数：</p>
+<p>中位数代表一个数值，可以将样本划分为比该数值大和比该数值小的两部分，且两部分的样本数量相等。</p>
+<p>分位数：</p>
+<p>分位数，也称分位点，是指将观测数据的取值范围分为几个等份的数值点。</p>
+<p>众数：</p>
+<p>众数指的是数据中出现频率最高的观测点。</p>
+<h3 id="箱型图和直方图绘制与性质">箱型图和直方图绘制与性质</h3>
+<p>重点为如何理解箱线图</p>
+<h4 id="箱型图">箱型图</h4>
+<p>绘制</p>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223005510542.png" class title="image-20221223005510542">
+<h4 id="直方图">直方图</h4>
+<p>绘制</p>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223203916362.png" class title="image-20221223203916362">
+<h3 id="核密度估计的定义与性质">核密度估计的定义与性质</h3>
+<p>核密度估计是一种用于估计数据概率密度函数的非参数平滑方法，对于维数较低的数据具有比较好的可视化效果</p>
+<h3 id="影响核密度估计的重要参数">影响核密度估计的重要参数</h3>
+<p>窗宽 $h$ 是影响核密度估计更为重要的参数</p>
+<h3 id="聚类算法的定义">聚类算法的定义</h3>
+<p>聚类分析的目标是在一定的准则下将观测数据划分为几类，每个数据只能属于其中一类，因此各类之间的数据没有交集</p>
+<h3 id="K均值算法的两个目标函数">K均值算法的两个目标函数</h3>
+<p>1、最小类距离和</p>
+<p>2、最小类方差和</p>
+<h3 id="K均值算法的迭代步骤">K均值算法的迭代步骤</h3>
+<p>1、随机初始化K个中心点</p>
+<p>2、计算所有数据点到各个中心点的距离，然后将，诶个数据点分配到距其最近的那个中心点所属类别</p>
+<p>3、计算各类中数据点的均值，并作为该类新的中心点</p>
+<p>4、不断对二、三步进行迭代，直至模型收敛，即所有中心点不再变化</p>
+<h3 id="K均值算法的优缺点">K均值算法的优缺点</h3>
+<p>优点：计算简单高效，容易实现，每步迭代都会使目标函数式取值下降或者不上升</p>
+<p>缺点：估计结果容易受到异常值的影响，算法不能保证找到全局最优解，聚类个数 $k$ 需要提前给定</p>
+<p><strong>随机初始化的中心点，容易导致局部最优，所以初始中心点对我们的结果影响很大（重点）</strong></p>
+<h3 id="主成分分析的定义">主成分分析的定义</h3>
+<p>主成分分析使一种数据降维方法</p>
+<h3 id="主成分分析的两个分析角度">主成分分析的两个分析角度</h3>
+<p>最大投影方差：主成分分析找到能够使投影后的数据方差最大的投影方向，尽量保持原始数据的差异性</p>
+<p>最小重构误差：将高维向量集压缩到低维向量集，并根据低维向量重构原始数据，使得重构误差最小</p>
+<h3 id="投影方向与主成分方向的联系">投影方向与主成分方向的联系</h3>
+<p>最佳的投影方向即为最大的特征对应的特征方向，即为第一主成分方向</p>
+<h3 id="特征分解和奇异值分解的区别">特征分解和奇异值分解的区别</h3>
+<p>矩阵分解将行数和列数相等的矩阵分解为由其特征值和特征向量表示的矩阵乘积</p>
+<p>奇异值分解可以用于行数列数不等的矩阵，而不仅仅是方阵</p>
+<h3 id="混合模型的定义">混合模型的定义</h3>
+<p>混合模型是一类用于异质数据建模的概率模型</p>
+<h3 id="核密度估计和混合模型的联系">核密度估计和混合模型的联系</h3>
+<p>核密度估计是混合模型的一种特殊形式</p>
+<h3 id="隐马尔可夫模型的定义">隐马尔可夫模型的定义</h3>
+<p>隐马尔科夫模型是一类带潜变量的统计模型</p>
+<h3 id="隐马尔可夫模型的性质（公式-3-5-4-、-3-5-5-）">隐马尔可夫模型的性质（公式 $3.5.4 $ 、$3.5.5$）</h3>
+<p>1、隐藏状态序列满足马尔可夫性，即当前状态只与上一个状态有关系，而与以前的状态没有关系</p>
+<p>2、可观测序列只依赖于当前时刻的隐藏状态，而与过去的观测序列和过去的隐藏状态序列没有关系</p>
+<h3 id="隐马尔可夫模型的组成">隐马尔可夫模型的组成</h3>
+<p>1、状态转移概率矩阵</p>
+<p>2、初始概率</p>
+<p>3、输出模型</p>
+<h3 id="向前概率和向后概率的作用">向前概率和向后概率的作用</h3>
+<p>减少计算复杂度</p>
+<h3 id="隐马尔可夫模型的向前概率法计算">隐马尔可夫模型的向前概率法计算</h3>
+<p>钉钉文件：meeting_复习2 9:30</p>
+<h3 id="计算下溢的原因">计算下溢的原因</h3>
+<p>由于向前概率和向后概率都是概率连乘的形式，当序列长度增大时，计算得到的向前概率、向后概率及$L(|Y^T)$ 都会趋向于零</p>
+<h2 id="第四章">第四章</h2>
+<h3 id="回归分析中随机误差项的性质">回归分析中随机误差项的性质</h3>
+<p>1、满足 $E(\epsilon)=0,Var(\epsilon)=\sigma^2$</p>
+<p>2、随机误差项的方差为常数</p>
+<p>3、随机误差项$\epsilon$与各个自变量 $X_j$ 相互独立</p>
+<h3 id="最小二乘估计的作用">最小二乘估计的作用</h3>
+<p>用来计算线性回归模型的模型系数</p>
+<h3 id="R-2-的作用、计算公式">$R^2$ 的作用、计算公式</h3>
+<h3 id="R-2-不同取值代表的含义">$R^2$ 不同取值代表的含义</h3>
+<p>度量响应变量Y的总变动可以在多大的比例上由回归模型所解释</p>
+<p>例：$R^2 = 0.8$ 即说明响应变量Y的变动的80%可以被回归模型被解释</p>
+<h3 id="回归分析流程的步骤">回归分析流程的步骤</h3>
+<p>1、画散点图，观察响应变量 Y和每个自变量(特征)$X_j$之间是否具有线性关系</p>
+<p>2、确认各个自变量不存在强相关关系</p>
+<p>$ps:$ 通过求解特征和特征的相关系数来确定强相关关系。相关系数取值范围为(0~1)，取值为1或者接近1，那么就是强相关</p>
+<p>3、估计模型中的未知参数 $\beta 和\sigma^2$</p>
+<p>$ps:$ 用最小二乘估计去估计模型中的未知参数</p>
+<p>4、画残差图来查看残差是否独立和同方差，画QQ图来检验无擦分布的正太性</p>
+<p>5、模型诊断，即找出异常值和杠杆点</p>
+<p>6、模型推断</p>
+<h3 id="变量选择的原因及方法">变量选择的原因及方法</h3>
+<p>P66</p>
+<h3 id="正则化方法和目的">正则化方法和目的</h3>
+<p>目的：减小泛化误差而不是训练误差的方法，称为正则化方法</p>
+<p>泛化误差：指的是测试集上的误差，而不是训练集上的误差。训练集上的误差被称为训练误差或者经验误差</p>
+<h3 id="L1正则化性质">L1正则化性质</h3>
+<h3 id="L1和L2正则化的拉格朗日形式（公式4-3-2-、-4-3-7）">L1和L2正则化的拉格朗日形式（公式4.3.2 、 4.3.7）</h3>
+<h3 id="稀疏性的概念">稀疏性的概念</h3>
+<h2 id="第五章">第五章</h2>
+<h3 id="判别分析的作用">判别分析的作用</h3>
+<p>处理分类问题</p>
+<h3 id="贝叶斯判别分析的定义及主要方法">贝叶斯判别分析的定义及主要方法</h3>
+<p>贝叶斯判别分析是基于贝叶斯准则衍生出来的一系列分类方法，根据模型假设的不同可以有多种，主要包括线性判别分析LDA，二次判别分析QDA及朴素贝叶斯判别分析等。</p>
+<h3 id="先验概率、后验概率、密度函数（公式5-1-1）">先验概率、后验概率、密度函数（公式5.1.1）</h3>
+<h3 id="线性判别分析的假设">线性判别分析的假设</h3>
+<p>假设每一类样本均服从高斯分布，每一类均值不同但都有相同的协方差矩阵</p>
+<h3 id="公式5-1-2-、-5-1-3推导">公式5.1.2 、 5.1.3推导</h3>
+<h3 id="二次判别分析的假设">二次判别分析的假设</h3>
+<p>假设每一类样本均服从高斯分布，每一类均值和协方差矩阵都不同</p>
+<h3 id="二次判别分析的决策边界性质">二次判别分析的决策边界性质</h3>
+<p>是一个二次函数</p>
+<h3 id="逻辑回归和线性回归的联系">逻辑回归和线性回归的联系</h3>
+<p>逻辑回归=线性回归+sigmoid函数</p>
+<h3 id="二分类问题，-y-0-和-y-1-的损失函数图的绘制、损失函数公式">二分类问题，$y = 0$和$y = 1$的损失函数图的绘制、损失函数公式</h3>
+<p>损失函数：$\sum_\limits {i = 1}^{N}-y_i\log[h(x)]-(1-y_i)\dot\log[1-h(x)]$</p>
+<p>y=0的损失函数图：</p>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095653520.png" class title="image-20230103095653520">
+<p>y = 1的损失函数图</p>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095802310.png" class title="image-20230103095802310">
+<h3 id="梯度下降法的计算">梯度下降法的计算</h3>
+<h3 id="SVM的定义与性质">SVM的定义与性质</h3>
+<p>支持向量机源自分类问题中使用超平面分割的思想，我们需要找到这个超平面使得整个超平面的间隔最大</p>
+<h3 id="混淆矩阵的常用度量与计算">混淆矩阵的常用度量与计算</h3>
+<p>计算讲解：钉钉文件：meeting_复习3</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>符号</th>
+<th>计算公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>敏感度（重点）</td>
+<td>TPR</td>
+<td>$\frac{TP}{TP+FN}$</td>
+</tr>
+<tr>
+<td>假阴性率</td>
+<td>FNR</td>
+<td>$\frac{FN}{TP+FN}$</td>
+</tr>
+<tr>
+<td>特异度</td>
+<td>TNR</td>
+<td>$\frac{TN}{TN+FP}$</td>
+</tr>
+<tr>
+<td>假阳性率</td>
+<td>FPR</td>
+<td>$\frac{FP}{TN+FP}$</td>
+</tr>
+<tr>
+<td>精确度（重点）</td>
+<td>PPV</td>
+<td>$\frac{TP}{TP+FP}$</td>
+</tr>
+<tr>
+<td>错误发现率</td>
+<td>FDR</td>
+<td>$\frac{FP}{TP+FP}$</td>
+</tr>
+<tr>
+<td>F1_score（重点）</td>
+<td>$F1$</td>
+<td>$\frac{1}{F1}=\frac{1}{2}(\frac{1}{TPR}+\frac{1}{PPV})$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ROC曲线和AUC的定义">ROC曲线和AUC的定义</h3>
+<p>ROC曲线：横轴为假阳性率（FPR），纵轴为敏感度（TPR）</p>
+<p>AUC定义：ROC曲线下的面积</p>
+<p>AUC的性质：AUC越大，分类器的效果越好</p>
+<h3 id="数据不平衡的定义与解决">数据不平衡的定义与解决</h3>
+<p>定义：数据不平衡指的是分类问题的观测数据中，某一类别的观测数少于其他类别。</p>
+<p>解决方法：</p>
+<p>​	（1）改变决策阈值</p>
+<p>​	（2）欠采样</p>
+<p>​	（3）过采样</p>
+<p>​	（4）代价敏感学习</p>
+<h2 id="补充">补充</h2>
+<h3 id="决策树">决策树</h3>
+<p>1、决策树最初的节点，成为根节点，最末端的节点，成为叶子节点</p>
+<p>2、决策树算法不是集成学习算法</p>
+<h3 id="EM算法步骤">EM算法步骤</h3>
+<p>1、EM算法在E步中给定当前的参数估计，计算带缺失数据的全似然函数的期望值</p>
+<p>2、在M步中求全似然函数的极值，更新参数估计。</p>
+<p>3、两个步骤不断迭代直到EM算法收敛</p>
+<h3 id="极大似然估计和置信区间">极大似然估计和置信区间</h3>
+<p>极大似然估计是一种点估计</p>
+<p>置信区间是一种区间估计</p>
+<h3 id="拟合问题">拟合问题</h3>
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111255032.png" class title="image-20230103111255032">
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111321966.png" class title="image-20230103111321966">
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111400573.png" class title="image-20230103111400573">
+<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103112146824.png" class title="image-20230103112146824">
+<h3 id="欠拟合的原因">欠拟合的原因</h3>
+<p>因为模型的复杂度很低，参数个数很少，训练集上的误差很大，测试集上的误差也很大，所以模型欠拟合</p>
+<h3 id="过拟合的原因">过拟合的原因</h3>
+<p>因为模型的复杂度很高，参数个数很多，训练集上的误差很小，测试集上的误差也很大，所以模型过拟合</p>
+
+    </div>
+
+    
+    
+    
+    <div>
+          
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+          
+    </div>
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>MH-Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.mh-li.life/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/" title="机器学习考试大纲">https://www.mh-li.life/2023/01/05/机器学习考试大纲/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%A7%E4%BA%8C%E4%B8%8A%E5%A4%8D%E4%B9%A0/" rel="tag"># 大二上复习</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/27/MySQL/" rel="prev" title="MySQL安装教程">
+                  <i class="fa fa-chevron-left"></i> MySQL安装教程
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MH-Li</span>
+</div>
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>次
+  </span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
