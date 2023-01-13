@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.mh-li.life","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Mysql安装教程（test） 第一步 下载压缩包到你的安装路径（就是你想把mysql安装到哪里，你就放在那里），然后解压  这里我想把mysql安装到D盘，所以我把压缩包安装到D盘，并且解压到D盘，此时压缩包已经没有用了，可以把他删掉了。 第二步 我们进入解压后的文件 右键点击，新建文本文档文件，然后将名字改成imi，将后缀名改成ini 新建文本文档就是他的名字，后面的txt就是他的后缀">
+    <meta name="description" content="第一步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL安装教程">
 <meta property="og:url" content="https://www.mh-li.life/2022/11/27/MySQL/index.html">
 <meta property="og:site_name" content="MH-Li &#39;s blog">
-<meta property="og:description" content="Mysql安装教程（test） 第一步 下载压缩包到你的安装路径（就是你想把mysql安装到哪里，你就放在那里），然后解压  这里我想把mysql安装到D盘，所以我把压缩包安装到D盘，并且解压到D盘，此时压缩包已经没有用了，可以把他删掉了。 第二步 我们进入解压后的文件 右键点击，新建文本文档文件，然后将名字改成imi，将后缀名改成ini 新建文本文档就是他的名字，后面的txt就是他的后缀">
+<meta property="og:description" content="第一步">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.mh-li.life/2022/11/27/MySQL/1.png">
 <meta property="og:image" content="https://www.mh-li.life/2022/11/27/MySQL/2.png">
@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://www.mh-li.life/2022/11/27/MySQL/26.png">
 <meta property="og:image" content="https://www.mh-li.life/2022/11/27/MySQL/27.png">
 <meta property="article:published_time" content="2022-11-27T07:34:40.000Z">
-<meta property="article:modified_time" content="2023-01-13T02:00:09.942Z">
+<meta property="article:modified_time" content="2023-01-13T02:11:23.689Z">
 <meta property="article:author" content="MH-Li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.mh-li.life/2022/11/27/MySQL/1.png">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Mysql安装教程（test）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-number">1.2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">第三步 配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="nav-number">1.4.</span> <span class="nav-text">第四步 初始化数据库文件目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%90%AF%E5%8A%A8mysql%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.5.</span> <span class="nav-text">第五步 下载并启动mysql服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E8%BF%9B%E5%85%A5mysql%EF%BC%8C%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">1.6.</span> <span class="nav-text">第六步 进入mysql，并修改密码</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">第三步 配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="nav-number">3.1.</span> <span class="nav-text">第四步 初始化数据库文件目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">第五步 下载并启动mysql服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">第六步 进入mysql，并修改密码</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,7 +238,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-13 10:00:09" itemprop="dateModified" datetime="2023-01-13T10:00:09+08:00">2023-01-13</time>
+      <time title="修改时间：2023-01-13 10:11:23" itemprop="dateModified" datetime="2023-01-13T10:11:23+08:00">2023-01-13</time>
     </span>
 
   
@@ -251,13 +251,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-         <span id="more"></span> 
-<h1>Mysql安装教程（test）</h1>
-<h2 id="第一步">第一步</h2>
+        <h1>第一步</h1>
+ <span id="more"></span> 
 <p>下载压缩包到你的安装路径（就是你想把mysql安装到哪里，你就放在那里），然后解压</p>
 <img src="/2022/11/27/MySQL/1.png" class>
 <p>这里我想把mysql安装到D盘，所以我把压缩包安装到D盘，并且解压到D盘，此时压缩包已经没有用了，可以把他删掉了。</p>
-<h2 id="第二步">第二步</h2>
+<h1>第二步</h1>
 <p>我们进入解压后的文件</p>
 <p>右键点击，新建文本文档文件，然后将名字改成imi，将后缀名改成ini</p>
 <p>新建文本文档就是他的名字，后面的txt就是他的后缀</p>
@@ -269,7 +268,7 @@
 <p>需要注意的是:</p>
 <p>dasedir=为你的解压后的文件的路径，例如我的解压文件路径是：D:\mysql-8.0.11-winx64，所以我的basedir=后面为：D:\\mysql-8.0.11-winx64 ，要注意的是，有\的地方再加个\,例如我的D:后面有个\，所以我输入成D:\\</p>
 <p>datadir=你的解压后的文件的路径\\data，例如我的解压文件路径是：D:\mysql-8.0.11-winx64，所以我的datadir=后面为：D:\\mysql-8.0.11-winx64\\data ，要注意的是，有\的地方再加个\,例如我的D:后面有个\，所以我输入成D:\\，我的mysql-8.0.11-winx64后面有个\，所以我输入成：mysql-8.0.11-winx64\\</p>
-<h2 id="第三步-配置环境变量">第三步 配置环境变量</h2>
+<h1>第三步 配置环境变量</h1>
 <p>打开设置</p>
 <img src="/2022/11/27/MySQL/4.png" class>
 <p>打开系统：</p>
@@ -302,14 +301,14 @@
 <img src="/2022/11/27/MySQL/14.png" class>
 <p>此时我们会发现多了一个data文件，点进去后，我们发现生成了一下文件，证明执行成功</p>
 <img src="/2022/11/27/MySQL/15.png" class>
-<h2 id="第五步-下载并启动mysql服务">第五步 下载并启动mysql服务</h2>
+<h1>第五步 下载并启动mysql服务</h1>
 <p>我们返回命令提示符，输入：mysqld -install</p>
 <img src="/2022/11/27/MySQL/16.png" class>
 <p>执行完毕后，会打印出：Service successfully installed</p>
 <p>然后关闭命令提示符，重新以管理员身份打开命令提示符</p>
 <p>输入：net start mysql</p>
 <img src="/2022/11/27/MySQL/17.png" class>
-<h2 id="第六步-进入mysql，并修改密码">第六步 进入mysql，并修改密码</h2>
+<h1>第六步 进入mysql，并修改密码</h1>
 <p>然后输入：mysql -u root -p</p>
 <img src="/2022/11/27/MySQL/18.png" class>
 <p>然后我们会发现提示你输入密码（Enter password:），我们打开你的解压后的文件，进入data文件夹</p>

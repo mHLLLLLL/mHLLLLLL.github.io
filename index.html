@@ -207,7 +207,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-13 09:54:21" itemprop="dateModified" datetime="2023-01-13T09:54:21+08:00">2023-01-13</time>
+      <time title="修改时间：2023-01-13 10:08:18" itemprop="dateModified" datetime="2023-01-13T10:08:18+08:00">2023-01-13</time>
     </span>
 
   
@@ -220,268 +220,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-           <span id="more"></span>  
-<h1>机器学习考试大纲</h1>
-<h2 id="第一章">第一章</h2>
-<h3 id="问题导向框架">问题导向框架</h3>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221222144531692.png" class title="image-20221222144531692">
-<h3 id="机器学习算法类型">机器学习算法类型</h3>
-<p>机器学习按学习目标的不同分为无监督学习、有监督学习和强化学习</p>
-<p>无监督学习典型算法：聚类算法，混合模型，k均值算法，主成分分析</p>
-<p>有监督学习典型算法：线性回归，逻辑回归，线性判别，k近邻，支持向量机，决策树</p>
-<p>有监督学习分为两类问题：</p>
-<p>分类问题：逻辑回归，线性判别，k近邻，支持向量机</p>
-<p>回归问题：线性回归，Lasso回归（线性回归+L1正则化），岭回归（线性回归+L2正则化）</p>
-<h3 id="深度学习和浅层学习">深度学习和浅层学习</h3>
-<p>深度学习指的是在机器学习方法中引入多个层级的非线性处理单元，每层使用前一层的输出作为输入，实现特征提取和特征转换</p>
-<p>浅层学习与深度学习对应，其对原始数据进行了一层函数映射</p>
-<h3 id="马尔可夫决策五元组">马尔可夫决策五元组</h3>
-<p>马尔可夫决策是一个五元组($S，A，P，R，\gamma$）</p>
-<p>（1）S是状态集，$s_t \in S$;</p>
-<p>（2）A是状态集，$a_t \in A$;</p>
-<p>（3）<em>P</em> 是转移概率函数矩阵，$P^a_{ss’} = P(s_{t+1} = s’|s_t = s,a_t = a)$ 为三元函数，表示在状态s~t~ = s 执行动作$ a_t = a$后下一个状态为 $s_{t+1} = s’$ 的概率；</p>
-<p>（4）R是回报函数，$R^a_s  = E(r_{t+1}|s_t = s,a_t = a)$ ；</p>
-<p>（5）$\gamma \in [0,1]$ 是折现因子，代表未来下一时刻单位回报在当前的价值</p>
-<h3 id="统计学习三要素">统计学习三要素</h3>
-<p>统计学习三要素：模型、策略（目标函数）和算法</p>
-<h3 id="常见机器学习应用">常见机器学习应用</h3>
-<p>常见应用包括图像识别、语音识别、文本挖掘、游戏竞技</p>
-<h2 id="第二章">第二章</h2>
-<h3 id="科学计算和数据处理的库（简单了解）">科学计算和数据处理的库（简单了解）</h3>
-<p>NumPy、SciPy、Pandas</p>
-<h3 id="常见库的导入方法（重点复习内容）">常见库的导入方法（重点复习内容）</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numpy.ones()  <span class="comment"># 生成全为1的数组</span></span><br><span class="line">numpy.zeros()  <span class="comment"># 生成全为0的数组</span></span><br></pre></td></tr></table></figure>
-<h2 id="第三章">第三章</h2>
-<h3 id="无监督学习和有监督学习的区别">无监督学习和有监督学习的区别</h3>
-<p>无监督学习主要研究没有标签的数据或不区分响应变量和解释变量的数据</p>
-<p>有监督学习主要研究有标签的数据或区分响应变量和解释变量的数据</p>
-<h3 id="无监督学习和有监督学习的输入特征的性质">无监督学习和有监督学习的输入特征的性质</h3>
-<p>无监督学习和有监督学习的输入特征可以是离散的，也可以是连续的</p>
-<h4 id="拓展：">拓展：</h4>
-<p>分类问题输入特征，可以是离散的，也可以是连续的，但输出特征是离散的</p>
-<p>回归问题输入特征，可以是离散的，也可以是连续的，但输出特征是连续的</p>
-<h3 id="描述性统计分析里的均值和方差公式与含义">描述性统计分析里的均值和方差公式与含义</h3>
-<p>假设${x_1,x_2,…,x_N}$ 是来自总体 $X$ 的一组一维观测样本</p>
-<h4 id="均值">均值</h4>
-<p>含义：反映的是数据样本的中心位置</p>
-<p>公式：$\hat\mu_x = \bar x = \frac{1}{N}\sum_{i=1}^{N}x_i$</p>
-<h4 id="方差">方差</h4>
-<p>含义：方差反应的是数据样本距离中心的平均离散程度</p>
-<p>公式：$\hat\sigma^2_x = \frac{1}{N-1}\sum_{i=1}^{N}(x_i-\hat\mu_x)^2$</p>
-<h3 id="描述性统计分析里的偏度和峰度的含义">描述性统计分析里的偏度和峰度的含义</h3>
-<h4 id="偏度">偏度</h4>
-<p>含义：偏度反映了数据分布偏离对称性的状况</p>
-<h4 id="峰度">峰度</h4>
-<p>含义：峰度反映了数据分布的中心附近的平坦程度</p>
-<h3 id="协方差矩阵的性质">协方差矩阵的性质</h3>
-<p>协方差矩阵一定是一个对称阵</p>
-<h3 id="相关系数矩阵的性质">相关系数矩阵的性质</h3>
-<p>对角线的值都为1</p>
-<h3 id="不同分布的偏度取值区别">不同分布的偏度取值区别</h3>
-<p>一般对称分布的偏度为0，如正态分布和Laplace分布；</p>
-<p>偏度<strong>大于</strong>0表示其数据分布形态与正态分布相比为<strong>正偏或右偏</strong>；</p>
-<p>偏度<strong>小于</strong>0表示其数据分布形态与正态分布相比为<strong>负数偏或左偏</strong></p>
-<h3 id="不同分布的峰度取值的区别">不同分布的峰度取值的区别</h3>
-<p>峰度的绝对值越大表示其分布形态与正态分布的陡缓程度的差异程度越大。</p>
-<p>峰度等于0，表示该分布与正太分布的中心的陡缓程度相同；</p>
-<p>峰度大于0，表示该分布与正太分布的中心的陡缓程度相比较为陡峭，为尖顶峰；</p>
-<p>峰度小于0，表示该分布与正太分布的中心的陡缓程度相比较为平坦，为平顶峰；</p>
-<p>正态分布的峰度为0，Laplace分布的峰度为0.3</p>
-<h3 id="中位数、分位数、众数的含义">中位数、分位数、众数的含义</h3>
-<p>中位数：</p>
-<p>中位数代表一个数值，可以将样本划分为比该数值大和比该数值小的两部分，且两部分的样本数量相等。</p>
-<p>分位数：</p>
-<p>分位数，也称分位点，是指将观测数据的取值范围分为几个等份的数值点。</p>
-<p>众数：</p>
-<p>众数指的是数据中出现频率最高的观测点。</p>
-<h3 id="箱型图和直方图绘制与性质">箱型图和直方图绘制与性质</h3>
-<p>重点为如何理解箱线图</p>
-<h4 id="箱型图">箱型图</h4>
-<p>绘制</p>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223005510542.png" class title="image-20221223005510542">
-<h4 id="直方图">直方图</h4>
-<p>绘制</p>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20221223203916362.png" class title="image-20221223203916362">
-<h3 id="核密度估计的定义与性质">核密度估计的定义与性质</h3>
-<p>核密度估计是一种用于估计数据概率密度函数的非参数平滑方法，对于维数较低的数据具有比较好的可视化效果</p>
-<h3 id="影响核密度估计的重要参数">影响核密度估计的重要参数</h3>
-<p>窗宽 $h$ 是影响核密度估计更为重要的参数</p>
-<h3 id="聚类算法的定义">聚类算法的定义</h3>
-<p>聚类分析的目标是在一定的准则下将观测数据划分为几类，每个数据只能属于其中一类，因此各类之间的数据没有交集</p>
-<h3 id="K均值算法的两个目标函数">K均值算法的两个目标函数</h3>
-<p>1、最小类距离和</p>
-<p>2、最小类方差和</p>
-<h3 id="K均值算法的迭代步骤">K均值算法的迭代步骤</h3>
-<p>1、随机初始化K个中心点</p>
-<p>2、计算所有数据点到各个中心点的距离，然后将，诶个数据点分配到距其最近的那个中心点所属类别</p>
-<p>3、计算各类中数据点的均值，并作为该类新的中心点</p>
-<p>4、不断对二、三步进行迭代，直至模型收敛，即所有中心点不再变化</p>
-<h3 id="K均值算法的优缺点">K均值算法的优缺点</h3>
-<p>优点：计算简单高效，容易实现，每步迭代都会使目标函数式取值下降或者不上升</p>
-<p>缺点：估计结果容易受到异常值的影响，算法不能保证找到全局最优解，聚类个数 $k$ 需要提前给定</p>
-<p><strong>随机初始化的中心点，容易导致局部最优，所以初始中心点对我们的结果影响很大（重点）</strong></p>
-<h3 id="主成分分析的定义">主成分分析的定义</h3>
-<p>主成分分析使一种数据降维方法</p>
-<h3 id="主成分分析的两个分析角度">主成分分析的两个分析角度</h3>
-<p>最大投影方差：主成分分析找到能够使投影后的数据方差最大的投影方向，尽量保持原始数据的差异性</p>
-<p>最小重构误差：将高维向量集压缩到低维向量集，并根据低维向量重构原始数据，使得重构误差最小</p>
-<h3 id="投影方向与主成分方向的联系">投影方向与主成分方向的联系</h3>
-<p>最佳的投影方向即为最大的特征对应的特征方向，即为第一主成分方向</p>
-<h3 id="特征分解和奇异值分解的区别">特征分解和奇异值分解的区别</h3>
-<p>矩阵分解将行数和列数相等的矩阵分解为由其特征值和特征向量表示的矩阵乘积</p>
-<p>奇异值分解可以用于行数列数不等的矩阵，而不仅仅是方阵</p>
-<h3 id="混合模型的定义">混合模型的定义</h3>
-<p>混合模型是一类用于异质数据建模的概率模型</p>
-<h3 id="核密度估计和混合模型的联系">核密度估计和混合模型的联系</h3>
-<p>核密度估计是混合模型的一种特殊形式</p>
-<h3 id="隐马尔可夫模型的定义">隐马尔可夫模型的定义</h3>
-<p>隐马尔科夫模型是一类带潜变量的统计模型</p>
-<h3 id="隐马尔可夫模型的性质（公式-3-5-4-、-3-5-5-）">隐马尔可夫模型的性质（公式 $3.5.4 $ 、$3.5.5$）</h3>
-<p>1、隐藏状态序列满足马尔可夫性，即当前状态只与上一个状态有关系，而与以前的状态没有关系</p>
-<p>2、可观测序列只依赖于当前时刻的隐藏状态，而与过去的观测序列和过去的隐藏状态序列没有关系</p>
-<h3 id="隐马尔可夫模型的组成">隐马尔可夫模型的组成</h3>
-<p>1、状态转移概率矩阵</p>
-<p>2、初始概率</p>
-<p>3、输出模型</p>
-<h3 id="向前概率和向后概率的作用">向前概率和向后概率的作用</h3>
-<p>减少计算复杂度</p>
-<h3 id="隐马尔可夫模型的向前概率法计算">隐马尔可夫模型的向前概率法计算</h3>
-<p>钉钉文件：meeting_复习2 9:30</p>
-<h3 id="计算下溢的原因">计算下溢的原因</h3>
-<p>由于向前概率和向后概率都是概率连乘的形式，当序列长度增大时，计算得到的向前概率、向后概率及$L(|Y^T)$ 都会趋向于零</p>
-<h2 id="第四章">第四章</h2>
-<h3 id="回归分析中随机误差项的性质">回归分析中随机误差项的性质</h3>
-<p>1、满足 $E(\epsilon)=0,Var(\epsilon)=\sigma^2$</p>
-<p>2、随机误差项的方差为常数</p>
-<p>3、随机误差项$\epsilon$与各个自变量 $X_j$ 相互独立</p>
-<h3 id="最小二乘估计的作用">最小二乘估计的作用</h3>
-<p>用来计算线性回归模型的模型系数</p>
-<h3 id="R-2-的作用、计算公式">$R^2$ 的作用、计算公式</h3>
-<h3 id="R-2-不同取值代表的含义">$R^2$ 不同取值代表的含义</h3>
-<p>度量响应变量Y的总变动可以在多大的比例上由回归模型所解释</p>
-<p>例：$R^2 = 0.8$ 即说明响应变量Y的变动的80%可以被回归模型被解释</p>
-<h3 id="回归分析流程的步骤">回归分析流程的步骤</h3>
-<p>1、画散点图，观察响应变量 Y和每个自变量(特征)$X_j$之间是否具有线性关系</p>
-<p>2、确认各个自变量不存在强相关关系</p>
-<p>$ps:$ 通过求解特征和特征的相关系数来确定强相关关系。相关系数取值范围为(0~1)，取值为1或者接近1，那么就是强相关</p>
-<p>3、估计模型中的未知参数 $\beta 和\sigma^2$</p>
-<p>$ps:$ 用最小二乘估计去估计模型中的未知参数</p>
-<p>4、画残差图来查看残差是否独立和同方差，画QQ图来检验无擦分布的正太性</p>
-<p>5、模型诊断，即找出异常值和杠杆点</p>
-<p>6、模型推断</p>
-<h3 id="变量选择的原因及方法">变量选择的原因及方法</h3>
-<p>P66</p>
-<h3 id="正则化方法和目的">正则化方法和目的</h3>
-<p>目的：减小泛化误差而不是训练误差的方法，称为正则化方法</p>
-<p>泛化误差：指的是测试集上的误差，而不是训练集上的误差。训练集上的误差被称为训练误差或者经验误差</p>
-<h3 id="L1正则化性质">L1正则化性质</h3>
-<h3 id="L1和L2正则化的拉格朗日形式（公式4-3-2-、-4-3-7）">L1和L2正则化的拉格朗日形式（公式4.3.2 、 4.3.7）</h3>
-<h3 id="稀疏性的概念">稀疏性的概念</h3>
-<h2 id="第五章">第五章</h2>
-<h3 id="判别分析的作用">判别分析的作用</h3>
-<p>处理分类问题</p>
-<h3 id="贝叶斯判别分析的定义及主要方法">贝叶斯判别分析的定义及主要方法</h3>
-<p>贝叶斯判别分析是基于贝叶斯准则衍生出来的一系列分类方法，根据模型假设的不同可以有多种，主要包括线性判别分析LDA，二次判别分析QDA及朴素贝叶斯判别分析等。</p>
-<h3 id="先验概率、后验概率、密度函数（公式5-1-1）">先验概率、后验概率、密度函数（公式5.1.1）</h3>
-<h3 id="线性判别分析的假设">线性判别分析的假设</h3>
-<p>假设每一类样本均服从高斯分布，每一类均值不同但都有相同的协方差矩阵</p>
-<h3 id="公式5-1-2-、-5-1-3推导">公式5.1.2 、 5.1.3推导</h3>
-<h3 id="二次判别分析的假设">二次判别分析的假设</h3>
-<p>假设每一类样本均服从高斯分布，每一类均值和协方差矩阵都不同</p>
-<h3 id="二次判别分析的决策边界性质">二次判别分析的决策边界性质</h3>
-<p>是一个二次函数</p>
-<h3 id="逻辑回归和线性回归的联系">逻辑回归和线性回归的联系</h3>
-<p>逻辑回归=线性回归+sigmoid函数</p>
-<h3 id="二分类问题，-y-0-和-y-1-的损失函数图的绘制、损失函数公式">二分类问题，$y = 0$和$y = 1$的损失函数图的绘制、损失函数公式</h3>
-<p>损失函数：$\sum_\limits {i = 1}^{N}-y_i\log[h(x)]-(1-y_i)\dot\log[1-h(x)]$</p>
-<p>y=0的损失函数图：</p>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095653520.png" class title="image-20230103095653520">
-<p>y = 1的损失函数图</p>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103095802310.png" class title="image-20230103095802310">
-<h3 id="梯度下降法的计算">梯度下降法的计算</h3>
-<h3 id="SVM的定义与性质">SVM的定义与性质</h3>
-<p>支持向量机源自分类问题中使用超平面分割的思想，我们需要找到这个超平面使得整个超平面的间隔最大</p>
-<h3 id="混淆矩阵的常用度量与计算">混淆矩阵的常用度量与计算</h3>
-<p>计算讲解：钉钉文件：meeting_复习3</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>符号</th>
-<th>计算公式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>敏感度（重点）</td>
-<td>TPR</td>
-<td>$\frac{TP}{TP+FN}$</td>
-</tr>
-<tr>
-<td>假阴性率</td>
-<td>FNR</td>
-<td>$\frac{FN}{TP+FN}$</td>
-</tr>
-<tr>
-<td>特异度</td>
-<td>TNR</td>
-<td>$\frac{TN}{TN+FP}$</td>
-</tr>
-<tr>
-<td>假阳性率</td>
-<td>FPR</td>
-<td>$\frac{FP}{TN+FP}$</td>
-</tr>
-<tr>
-<td>精确度（重点）</td>
-<td>PPV</td>
-<td>$\frac{TP}{TP+FP}$</td>
-</tr>
-<tr>
-<td>错误发现率</td>
-<td>FDR</td>
-<td>$\frac{FP}{TP+FP}$</td>
-</tr>
-<tr>
-<td>F1_score（重点）</td>
-<td>$F1$</td>
-<td>$\frac{1}{F1}=\frac{1}{2}(\frac{1}{TPR}+\frac{1}{PPV})$</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ROC曲线和AUC的定义">ROC曲线和AUC的定义</h3>
-<p>ROC曲线：横轴为假阳性率（FPR），纵轴为敏感度（TPR）</p>
-<p>AUC定义：ROC曲线下的面积</p>
-<p>AUC的性质：AUC越大，分类器的效果越好</p>
-<h3 id="数据不平衡的定义与解决">数据不平衡的定义与解决</h3>
-<p>定义：数据不平衡指的是分类问题的观测数据中，某一类别的观测数少于其他类别。</p>
-<p>解决方法：</p>
-<p>​	（1）改变决策阈值</p>
-<p>​	（2）欠采样</p>
-<p>​	（3）过采样</p>
-<p>​	（4）代价敏感学习</p>
-<h2 id="补充">补充</h2>
-<h3 id="决策树">决策树</h3>
-<p>1、决策树最初的节点，成为根节点，最末端的节点，成为叶子节点</p>
-<p>2、决策树算法不是集成学习算法</p>
-<h3 id="EM算法步骤">EM算法步骤</h3>
-<p>1、EM算法在E步中给定当前的参数估计，计算带缺失数据的全似然函数的期望值</p>
-<p>2、在M步中求全似然函数的极值，更新参数估计。</p>
-<p>3、两个步骤不断迭代直到EM算法收敛</p>
-<h3 id="极大似然估计和置信区间">极大似然估计和置信区间</h3>
-<p>极大似然估计是一种点估计</p>
-<p>置信区间是一种区间估计</p>
-<h3 id="拟合问题">拟合问题</h3>
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111255032.png" class title="image-20230103111255032">
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111321966.png" class title="image-20230103111321966">
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103111400573.png" class title="image-20230103111400573">
-<img src="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/image-20230103112146824.png" class title="image-20230103112146824">
-<h3 id="欠拟合的原因">欠拟合的原因</h3>
-<p>因为模型的复杂度很低，参数个数很少，训练集上的误差很大，测试集上的误差也很大，所以模型欠拟合</p>
-<h3 id="过拟合的原因">过拟合的原因</h3>
-<p>因为模型的复杂度很高，参数个数很多，训练集上的误差很小，测试集上的误差也很大，所以模型过拟合</p>
-
+          <h1>第一章</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/01/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -546,7 +293,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-13 10:00:09" itemprop="dateModified" datetime="2023-01-13T10:00:09+08:00">2023-01-13</time>
+      <time title="修改时间：2023-01-13 10:11:23" itemprop="dateModified" datetime="2023-01-13T10:11:23+08:00">2023-01-13</time>
     </span>
 
   
@@ -559,98 +306,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-           <span id="more"></span> 
-<h1>Mysql安装教程（test）</h1>
-<h2 id="第一步">第一步</h2>
-<p>下载压缩包到你的安装路径（就是你想把mysql安装到哪里，你就放在那里），然后解压</p>
-<img src="/2022/11/27/MySQL/1.png" class>
-<p>这里我想把mysql安装到D盘，所以我把压缩包安装到D盘，并且解压到D盘，此时压缩包已经没有用了，可以把他删掉了。</p>
-<h2 id="第二步">第二步</h2>
-<p>我们进入解压后的文件</p>
-<p>右键点击，新建文本文档文件，然后将名字改成imi，将后缀名改成ini</p>
-<p>新建文本文档就是他的名字，后面的txt就是他的后缀</p>
-<img src="/2022/11/27/MySQL/2.png" class>
-<img src="/2022/11/27/MySQL/3.png" class>
-<p>改完后，我们打开这个my.ini文件</p>
-<p>将以下内容复制到这个文件中,然后保存</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">port=3306</span><br><span class="line">basedir=D:\\mysql-8.0.11-winx64 </span><br><span class="line">datadir=D:\\mysql-8.0.11-winx64\\data</span><br><span class="line">max_connections=200</span><br><span class="line">max_connect_errors=10</span><br><span class="line">character-set-server=utf8</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[client]</span><br><span class="line">port=3306</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-<p>需要注意的是:</p>
-<p>dasedir=为你的解压后的文件的路径，例如我的解压文件路径是：D:\mysql-8.0.11-winx64，所以我的basedir=后面为：D:\\mysql-8.0.11-winx64 ，要注意的是，有\的地方再加个\,例如我的D:后面有个\，所以我输入成D:\\</p>
-<p>datadir=你的解压后的文件的路径\\data，例如我的解压文件路径是：D:\mysql-8.0.11-winx64，所以我的datadir=后面为：D:\\mysql-8.0.11-winx64\\data ，要注意的是，有\的地方再加个\,例如我的D:后面有个\，所以我输入成D:\\，我的mysql-8.0.11-winx64后面有个\，所以我输入成：mysql-8.0.11-winx64\\</p>
-<h2 id="第三步-配置环境变量">第三步 配置环境变量</h2>
-<p>打开设置</p>
-<img src="/2022/11/27/MySQL/4.png" class>
-<p>打开系统：</p>
-<img src="/2022/11/27/MySQL/6.png" class>
-<p>点击关于</p>
-<img src="/2022/11/27/MySQL/7.png" class>
-<p>点击高级系统设置：</p>
-<img src="/2022/11/27/MySQL/8.png" class>
-<p>点击环境变量：</p>
-<img src="/2022/11/27/MySQL/9.png" class>
-<p>点击系统变量下面的新建</p>
-<img src="/2022/11/27/MySQL/10.png" class>
-<p>变量名输入：Path</p>
-<p>变量值输入;安装路径下bin文件夹的路径; （注意前后加 <strong>;</strong> ）</p>
-<p>然后点击确定</p>
-<h2 id="第四步-初始化数据库文件目录">第四步 初始化数据库文件目录</h2>
-<p>点击win键，就是你的键盘上的最底下的那个有四个方块的键</p>
-<p>输入cmd</p>
-<p>点击以管理员身份运行，注意！！！！ 点击以管理员身份运行，点击以管理员身份运行</p>
-<img src="/2022/11/27/MySQL/11.png" class>
-<p>打开之后，如果安装到D盘，输入: d: ,然后回车（按Enter键）</p>
-<p>如果安装到c盘，请忽略这一步</p>
-<img src="/2022/11/27/MySQL/12.png" class>
-<p>然后输入cd 你的安装包中bin文件夹的路径</p>
-<p>我的安装包的路径为：D:\mysql-8.0.11-winx64，所以我输入 cd D:\mysql-8.0.11-winx64\bin</p>
-<img src="/2022/11/27/MySQL/13.png" class>
-<p>初始化命令：mysqld --initialize</p>
-<p>然后继续输入：mysqld --initialize</p>
-<p>等执行结束之后，不要叉掉你的命令提示符，你再次打开并进入你的解压后的文件，文件结构如下：</p>
-<img src="/2022/11/27/MySQL/14.png" class>
-<p>此时我们会发现多了一个data文件，点进去后，我们发现生成了一下文件，证明执行成功</p>
-<img src="/2022/11/27/MySQL/15.png" class>
-<h2 id="第五步-下载并启动mysql服务">第五步 下载并启动mysql服务</h2>
-<p>我们返回命令提示符，输入：mysqld -install</p>
-<img src="/2022/11/27/MySQL/16.png" class>
-<p>执行完毕后，会打印出：Service successfully installed</p>
-<p>然后关闭命令提示符，重新以管理员身份打开命令提示符</p>
-<p>输入：net start mysql</p>
-<img src="/2022/11/27/MySQL/17.png" class>
-<h2 id="第六步-进入mysql，并修改密码">第六步 进入mysql，并修改密码</h2>
-<p>然后输入：mysql -u root -p</p>
-<img src="/2022/11/27/MySQL/18.png" class>
-<p>然后我们会发现提示你输入密码（Enter password:），我们打开你的解压后的文件，进入data文件夹</p>
-<p>找到文件后缀为err的文件，以记事本打开</p>
-<img src="/2022/11/27/MySQL/19.png" class>
-<p>打开后我们找到有 root@localhost的这一行</p>
-<img src="/2022/11/27/MySQL/20.png" class>
-<img src="/2022/11/27/MySQL/21.png" class>
-<p>root@localhost：后面的为你的初始化密码，例如我的初始化密码为：I(oz,-Xye0hW</p>
-<img src="/2022/11/27/MySQL/22.png" class>
-<p>然后我们将密码仔细的输入到命令行中，记住要手动输入，然后按回车</p>
-<p>当看到mysql&gt;,则进入了mysql当中</p>
-<img src="/2022/11/27/MySQL/23.png" class>
-<p>最后我们修改密码，输入：ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘密码’;</p>
-<p>然后回车</p>
-<p>例如我的密码想修改为：123456，</p>
-<p>所以我输入：ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘123456’;</p>
-<p>注意：最后要加 <strong>;</strong></p>
-<img src="/2022/11/27/MySQL/24.png" class>
-<p>现在，我们已经安装完mysql了</p>
-<p>我们退出mysql，输入：exit，然后回车</p>
-<img src="/2022/11/27/MySQL/25.png" class>
-<p>当我们想进入mysql的时候</p>
-<p>输入：mysql -u root -p</p>
-<p>然后回车，输入你修改完的密码</p>
-<img src="/2022/11/27/MySQL/26.png" class>
-<p>就可以进入了</p>
-<img src="/2022/11/27/MySQL/27.png" class>
-<p>如果不想让数据库系统运行，可以停止mysql服务</p>
-<p>停止mysql服务也是在管理员下的命令行界面下执行：net stop mysql</p>
-<p>也可以用图形界面方式启动和停止mysql服务，方法如下：<br>
-右击”计算机“ —&gt; ‘管理’ —&gt; ‘服务与应用程序’ —&gt; ‘服务’，在服务窗口中找到‘mysql’服务，右击它，启动或停止</p>
-
+          <h1>第一步</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/27/MySQL/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -715,7 +379,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-13 09:54:04" itemprop="dateModified" datetime="2023-01-13T09:54:04+08:00">2023-01-13</time>
+      <time title="修改时间：2023-01-13 10:02:53" itemprop="dateModified" datetime="2023-01-13T10:02:53+08:00">2023-01-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -737,11 +401,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-           <span id="more"></span> 	
-<p>Hello啊各位，我也不知道有多少人会访问我这个默默无闻的小站，但这是我第一个博客，也是我的第一篇blog。</p>
-<p>​	在2021年，我在12月份，许下了要做一个属于自己的个人博客，现在是2022年11.26号，也算是说到做到吧。我觉得一个计算机行业的人，拥有自己的一个blog是一个很帅的事情，这里可能就是我的第一个网上的小窝吧，就像家一样，分享自己的学习经验，生活经历，以及我的碎碎的、繁琐的小事。这比朋友圈和QQ空间酷多了（至少我个人是这样觉得的）。可能10年、20年以后，我再次打开这个网站，翻到底，看到年轻时写的这段话，会觉得很尬，但我至少，终于做完了一件自己想要实现的东西。</p>
-<p>​	目前这个博客基于Hexo+github，后来又迁移到云服务器上，快速简洁，还是很香的，那么大概就说这么多吧</p>
-
+          <p>Hello啊各位，我也不知道有多少人会访问我这个默默无闻的小站，但这是我第一个博客，也是我的第一篇blog。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
